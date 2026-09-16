@@ -1,6 +1,6 @@
-# Drakkar — Landing Page
+# Drakkars Producciones — Landing Page
 
-Landing page (single-page) para Drakkar, productora de eventos y conciertos en México. Construida con Next.js (App Router) + TypeScript + Tailwind CSS + Framer Motion.
+Landing page (single-page) para Drakkars Producciones, productora de eventos y conciertos en México. Construida con Next.js (App Router) + TypeScript + Tailwind CSS + Framer Motion.
 
 ## Stack
 
@@ -35,14 +35,24 @@ public/media/
   hero-concierto.mp4          # (pendiente) video de fondo del Hero
   hero-poster.jpg              # (pendiente) poster de respaldo
 public/fonts/
-  Livingstone.ttf                # Tipografía de títulos (H1/H2 y wordmark)
+  Livingstone.ttf                # Tipografía de títulos (H1/H2)
+public/brand/
+  drakkars-logo.png                # Logo recortado y con fondo transparente
+app/
+  icon.png / apple-icon.png          # Favicon generado a partir del logo
 ```
 
 ## Tipografía
 
-- **Livingstone** (`public/fonts/Livingstone.ttf`, `next/font/local`, variable `--font-display` / clase `font-display`) — para H1, H2 de sección y el wordmark "DRAKKAR". Fuente decorativa de un solo peso (Regular): no usar `font-bold`/`font-extrabold` sobre ella (negrita sintética se ve mal). Se usa bajo **licencia comercial propia** de Drakkar (Stringlabs) — mantener este repositorio privado y no redistribuir el archivo `.ttf` fuera del proyecto.
+- **Livingstone** (`public/fonts/Livingstone.ttf`, `next/font/local`, variable `--font-display` / clase `font-display`) — para H1 y H2 de sección. Fuente decorativa de un solo peso (Regular): no usar `font-bold`/`font-extrabold` sobre ella (negrita sintética se ve mal). Se usa bajo **licencia comercial propia** de Drakkars Producciones (Stringlabs) — mantener este repositorio privado y no redistribuir el archivo `.ttf` fuera del proyecto.
 - **Sora** (`--font-subheading` / clase `font-subheading`) — subtítulos de tarjetas (h3), cifras de precios y contadores, donde una gótica pierde legibilidad a tamaños pequeños.
 - **Manrope** (`--font-body`) — texto de cuerpo.
+
+## Logo
+
+`public/brand/drakkars-logo.png` es el logo original (`Logo--Drakkars-Producciones.jpeg`, fondo negro sólido) recortado a su bounding box real y con el negro convertido a transparencia (script en el historial de esta sesión, usando Pillow: umbral de luminancia con rampa antialiaseada). Se usa en `Navbar.tsx` y `Footer.tsx` vía `next/image`. El favicon (`app/icon.png`, `app/apple-icon.png`) se generó centrando el mismo logo sobre un cuadro con el color `obsidian` de la marca.
+
+La resolución fuente es modesta (626×273 px) porque así llegó el `.jpeg` original — se ve nítido en navbar/footer pero convendría pedir al diseñador un archivo vectorial (SVG/AI) o un PNG de mayor resolución si en el futuro se usa a tamaños más grandes (p. ej. como watermark en el Hero).
 
 ## Puntos de integración pendientes (backend / pagos)
 

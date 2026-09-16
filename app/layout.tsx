@@ -28,7 +28,7 @@ const body = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "DRAKKAR | La nueva era del entretenimiento en vivo en México",
+  title: "Drakkars Producciones | La nueva era del entretenimiento en vivo en México",
   description:
     "Productora de eventos y conciertos sin cargos ocultos, sin colapsos y sin inseguridad. Únete al Flex Pass y vive la experiencia mágica.",
   keywords: [
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     "membresía conciertos",
   ],
   openGraph: {
-    title: "DRAKKAR | La nueva era del entretenimiento en vivo en México",
+    title: "Drakkars Producciones | La nueva era del entretenimiento en vivo en México",
     description:
       "Cero cargos ocultos. Cero colapsos. Cero inseguridad. Bienvenido a la experiencia mágica.",
     locale: "es_MX",

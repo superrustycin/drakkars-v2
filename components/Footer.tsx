@@ -1,5 +1,8 @@
 "use client";
 
+import Image from "next/image";
+import drakkarsLogo from "@/public/brand/drakkars-logo.png";
+
 const SOCIALS = [
   { label: "Instagram", href: "https://instagram.com" },
   { label: "TikTok", href: "https://tiktok.com" },
@@ -27,8 +30,12 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="grid gap-12 md:grid-cols-4">
           <div className="md:col-span-1">
-            <a href="#" className="font-display text-2xl">
-              DRAKKAR<span className="text-gradient-gold">.</span>
+            <a href="#" className="inline-flex">
+              <Image
+                src={drakkarsLogo}
+                alt="Drakkars Producciones"
+                className="h-16 w-auto"
+              />
             </a>
             <p className="mt-4 text-sm text-white/50">
               La productora que nace para devolverle al público mexicano una
@@ -125,7 +132,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-white/40 sm:flex-row">
-          <p>© {new Date().getFullYear()} Drakkar Live Entertainment. Todos los derechos reservados.</p>
+          <p>© {new Date().getFullYear()} Drakkars Producciones. Todos los derechos reservados.</p>
           <p>Hecho con 🖤 en México.</p>
         </div>
       </div>

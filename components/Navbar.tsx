@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
+import drakkarsLogo from "@/public/brand/drakkars-logo.png";
 
 const NAV_LINKS = [
   { label: "Manifiesto", href: "#manifiesto" },
@@ -30,8 +32,13 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-        <a href="#" className="font-display text-2xl">
-          DRAKKAR<span className="text-gradient-gold">.</span>
+        <a href="#" className="flex items-center">
+          <Image
+            src={drakkarsLogo}
+            alt="Drakkars Producciones"
+            priority
+            className="h-10 w-auto sm:h-12"
+          />
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
