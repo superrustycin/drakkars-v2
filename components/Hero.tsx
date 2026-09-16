@@ -1,6 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import drakkarsLogo from "@/public/brand/drakkars-logo.png";
+import { useScrolled } from "@/hooks/useScrolled";
 
 const STATS = [
   { value: "0%", label: "Cargos ocultos" },
@@ -9,6 +12,8 @@ const STATS = [
 ];
 
 export default function Hero() {
+  const scrolled = useScrolled();
+
   return (
     <section className="relative flex min-h-[100svh] items-center overflow-hidden pt-24">
       {/*
@@ -36,6 +41,32 @@ export default function Hero() {
 
       <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
+          <AnimatePresence>
+            {!scrolled && (
+              <motion.a
+                key="hero-logo"
+                href="#"
+                layoutId="brand-logo"
+                initial={{ opacity: 0, y: -16 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{
+                  layout: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+                  opacity: { duration: 0.3 },
+                  y: { duration: 0.6 },
+                }}
+                className="mb-8 inline-flex"
+              >
+                <Image
+                  src={drakkarsLogo}
+                  alt="Drakkars Producciones"
+                  priority
+                  className="h-24 w-auto sm:h-32 md:h-40 lg:h-48"
+                />
+              </motion.a>
+            )}
+          </AnimatePresence>
+
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}

@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import drakkarsLogo from "@/public/brand/drakkars-logo.png";
+import { useScrolled } from "@/hooks/useScrolled";
 
 const NAV_LINKS = [
   { label: "Manifiesto", href: "#manifiesto" },
@@ -12,13 +12,7 @@ const NAV_LINKS = [
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const scrolled = useScrolled();
 
   return (
     <motion.header
@@ -32,14 +26,31 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-        <a href="#" className="flex items-center">
-          <Image
-            src={drakkarsLogo}
-            alt="Drakkars Producciones"
-            priority
-            className="h-10 w-auto sm:h-12"
-          />
-        </a>
+        <div className="flex h-10 w-[92px] items-center sm:h-12 sm:w-[110px]">
+          <AnimatePresence>
+            {scrolled && (
+              <motion.a
+                key="navbar-logo"
+                href="#"
+                layoutId="brand-logo"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{
+                  layout: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+                  opacity: { duration: 0.25 },
+                }}
+              >
+                <Image
+                  src={drakkarsLogo}
+                  alt="Drakkars Producciones"
+                  priority
+                  className="h-10 w-auto sm:h-12"
+                />
+              </motion.a>
+            )}
+          </AnimatePresence>
+        </div>
 
         <div className="hidden items-center gap-8 md:flex">
           {NAV_LINKS.map((link) => (
