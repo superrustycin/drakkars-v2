@@ -49,7 +49,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-display text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl"
+            className="font-display text-5xl leading-[1.2] sm:text-6xl md:text-7xl"
           >
             La nueva era del{" "}
             <span className="text-gradient-gold">entretenimiento en vivo</span>{" "}
@@ -95,7 +95,7 @@ export default function Hero() {
           >
             {STATS.map((stat) => (
               <div key={stat.label}>
-                <div className="font-display text-2xl font-bold text-gold-bright sm:text-3xl">
+                <div className="font-subheading text-2xl font-bold text-gold-bright sm:text-3xl">
                   {stat.value}
                 </div>
                 <div className="mt-1 text-xs text-white/50 sm:text-sm">

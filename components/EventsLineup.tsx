@@ -53,7 +53,7 @@ export default function EventsLineup() {
         >
           <div className="max-w-xl">
             <span className="section-eyebrow">Cartelera</span>
-            <h2 className="mt-6 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
+            <h2 className="mt-6 font-display text-4xl leading-snug sm:text-5xl">
               Próximos <span className="text-gradient-gold">eventos</span>
             </h2>
             <p className="mt-4 text-lg text-white/60">
@@ -96,7 +96,7 @@ export default function EventsLineup() {
               </div>
 
               <div className="glass-card -mt-4 relative rounded-t-2xl p-6">
-                <h3 className="font-display text-xl font-bold">{event.name}</h3>
+                <h3 className="font-subheading text-xl font-bold">{event.name}</h3>
                 <p className="mt-1 text-sm text-white/60">{event.artist}</p>
 
                 <div className="mt-4 space-y-1.5 border-t border-white/10 pt-4 text-sm text-white/50">

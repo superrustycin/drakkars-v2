@@ -26,7 +26,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        display: ["var(--font-display)", "sans-serif"],
+        display: ["var(--font-display)", "serif"],
+        subheading: ["var(--font-subheading)", "sans-serif"],
         body: ["var(--font-body)", "sans-serif"],
       },
       backgroundImage: {

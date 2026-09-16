@@ -30,7 +30,7 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-        <a href="#" className="font-display text-xl font-extrabold tracking-tight">
+        <a href="#" className="font-display text-2xl">
           DRAKKAR<span className="text-gradient-gold">.</span>
         </a>
 

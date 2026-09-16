@@ -1,10 +1,23 @@
 import type { Metadata } from "next";
 import { Sora, Manrope } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const display = Sora({
-  subsets: ["latin"],
+// Fuente de marca para títulos grandes (H1 / H2 de sección / wordmark).
+// Licencia comercial adquirida — archivo en public/fonts/Livingstone.ttf.
+const display = localFont({
+  src: "../public/fonts/Livingstone.ttf",
   variable: "--font-display",
+  weight: "400",
+  style: "normal",
+  display: "swap",
+});
+
+// Sora se conserva para subtítulos de tarjetas y cifras, donde una
+// decorativa gótica pierde legibilidad a tamaños pequeños.
+const subheading = Sora({
+  subsets: ["latin"],
+  variable: "--font-subheading",
   weight: ["600", "700", "800"],
 });
 
@@ -41,7 +54,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es-MX" className="dark scroll-smooth">
-      <body className={`${display.variable} ${body.variable} font-body`}>
+      <body
+        className={`${display.variable} ${subheading.variable} ${body.variable} font-body`}
+      >
         {children}
       </body>
     </html>

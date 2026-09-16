@@ -34,7 +34,15 @@ components/
 public/media/
   hero-concierto.mp4          # (pendiente) video de fondo del Hero
   hero-poster.jpg              # (pendiente) poster de respaldo
+public/fonts/
+  Livingstone.ttf                # Tipografía de títulos (H1/H2 y wordmark)
 ```
+
+## Tipografía
+
+- **Livingstone** (`public/fonts/Livingstone.ttf`, `next/font/local`, variable `--font-display` / clase `font-display`) — para H1, H2 de sección y el wordmark "DRAKKAR". Fuente decorativa de un solo peso (Regular): no usar `font-bold`/`font-extrabold` sobre ella (negrita sintética se ve mal). Se usa bajo **licencia comercial propia** de Drakkar (Stringlabs) — mantener este repositorio privado y no redistribuir el archivo `.ttf` fuera del proyecto.
+- **Sora** (`--font-subheading` / clase `font-subheading`) — subtítulos de tarjetas (h3), cifras de precios y contadores, donde una gótica pierde legibilidad a tamaños pequeños.
+- **Manrope** (`--font-body`) — texto de cuerpo.
 
 ## Puntos de integración pendientes (backend / pagos)
 

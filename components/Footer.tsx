@@ -27,7 +27,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="grid gap-12 md:grid-cols-4">
           <div className="md:col-span-1">
-            <a href="#" className="font-display text-xl font-extrabold tracking-tight">
+            <a href="#" className="font-display text-2xl">
               DRAKKAR<span className="text-gradient-gold">.</span>
             </a>
             <p className="mt-4 text-sm text-white/50">

@@ -78,7 +78,7 @@ export default function FlexPass() {
           className="mx-auto max-w-2xl text-center"
         >
           <span className="section-eyebrow">El Modelo Flex Pass</span>
-          <h2 className="mt-6 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
+          <h2 className="mt-6 font-display text-4xl leading-snug sm:text-5xl">
             Una membresía, <span className="text-gradient-gold">acceso ilimitado</span>{" "}
             a la magia
           </h2>
@@ -100,10 +100,10 @@ export default function FlexPass() {
               transition={{ duration: 0.6, delay: i * 0.15 }}
               className="relative"
             >
-              <div className="font-display text-6xl font-extrabold text-white/5">
+              <div className="font-subheading text-6xl font-extrabold text-white/5">
                 {step.number}
               </div>
-              <h3 className="-mt-6 font-display text-xl font-bold">
+              <h3 className="-mt-6 font-subheading text-xl font-bold">
                 {step.title}
               </h3>
               <p className="mt-2 text-sm text-white/60">{step.description}</p>
@@ -135,11 +135,11 @@ export default function FlexPass() {
                 </span>
               )}
 
-              <h3 className="font-display text-lg font-bold text-white/80">
+              <h3 className="font-subheading text-lg font-bold text-white/80">
                 {plan.name}
               </h3>
               <div className="mt-4 flex items-baseline gap-1">
-                <span className="font-display text-4xl font-extrabold">
+                <span className="font-subheading text-4xl font-extrabold">
                   {plan.price}
                 </span>
                 <span className="text-white/50">{plan.period}</span>

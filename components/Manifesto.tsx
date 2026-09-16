@@ -38,7 +38,7 @@ export default function Manifesto() {
           className="mx-auto max-w-2xl text-center"
         >
           <span className="section-eyebrow">Nuestro Manifiesto</span>
-          <h2 className="mt-6 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
+          <h2 className="mt-6 font-display text-4xl leading-snug sm:text-5xl">
             Estamos cansados de lo mismo.{" "}
             <span className="text-gradient-gold">Por eso, cambiamos las reglas.</span>
           </h2>
@@ -63,7 +63,7 @@ export default function Manifesto() {
                 {pillar.icon}
               </div>
 
-              <h3 className="mt-6 font-display text-xl font-bold">
+              <h3 className="mt-6 font-subheading text-xl font-bold">
                 {pillar.title}
               </h3>
 
