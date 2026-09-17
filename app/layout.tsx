@@ -27,7 +27,10 @@ const body = Manrope({
   weight: ["400", "500", "600", "700"],
 });
 
+const SITE_URL = "https://www.drakkars.show";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Drakkars Producciones | La nueva era del entretenimiento en vivo en México",
   description:
     "Productora de eventos y conciertos sin cargos ocultos, sin colapsos y sin inseguridad. Únete al Flex Pass y vive la experiencia mágica.",
@@ -38,10 +41,15 @@ export const metadata: Metadata = {
     "eventos en vivo",
     "membresía conciertos",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Drakkars Producciones | La nueva era del entretenimiento en vivo en México",
     description:
       "Cero cargos ocultos. Cero colapsos. Cero inseguridad. Bienvenido a la experiencia mágica.",
+    url: SITE_URL,
+    siteName: "Drakkars Producciones",
     locale: "es_MX",
     type: "website",
   },
