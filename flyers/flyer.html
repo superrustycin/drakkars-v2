@@ -378,6 +378,8 @@
   const dayShort = esc((E.dayName || "").slice(0, 3));
   const monShort = esc((E.month || "").slice(0, 3));
   const hours = [E.doors, E.endTime].filter(has).map(esc).join(" – ");
+  // Sufijo "hrs" solo para horario de 24 h (no para "9:00 PM")
+  const hrs = /\b[ap]\.?\s?m\.?$/i.test(hours) ? "" : " hrs";
   const supportTxt = (E.support || []).filter(has).map(esc).join(" · ");
   const LOGO_D = "assets/drakkars-logo.png";
   const LOGO_M = "assets/meson-terraza-leon.png";
@@ -542,7 +544,7 @@
         </div>
         <div class="grid">
           <div class="date"><div class="d gold-text">${esc(E.day)}</div><div class="dm">${esc(E.dayName)}<br><span>${esc(E.month)}</span><br>${esc(E.year)}</div></div>
-          <div class="where"><img src="${LOGO_M}" alt=""><div><div class="val">${esc(E.venue)}<small>${esc(E.address)}</small></div><div class="time">${hours} HRS</div></div></div>
+          <div class="where"><img src="${LOGO_M}" alt=""><div><div class="val">${esc(E.venue)}<small>${esc(E.address)}</small></div><div class="time">${hours}${hrs.toUpperCase()}</div></div></div>
           ${qr()}
         </div>
         <div class="bottom">
@@ -573,7 +575,7 @@
         <div class="kicker">${mark()}<div>${opt(has(E.kicker), `<div class="k2">${esc(E.kicker)}</div>`)}${opt(has(E.title), `<div class="t gold-text">${esc(E.title)}</div>`)}<div class="s">${esc(E.subtitle)}</div></div></div>
         <div class="names">${blocks}</div>
         <div class="table">
-          <div class="cell"><div class="k">Fecha</div><div class="val">${esc(E.dayName)} ${esc(E.day)} de ${esc(E.month)}<small>Puertas ${hours} hrs</small></div></div>
+          <div class="cell"><div class="k">Fecha</div><div class="val">${esc(E.dayName)} ${esc(E.day)} de ${esc(E.month)}<small>Puertas ${hours}${hrs}</small></div></div>
           <div class="cell"><div class="k">Lugar</div><div class="val">${esc(E.venue)}<small>${esc(E.address)}</small></div></div>
           ${opt(has(supportTxt), `<div class="cell"><div class="k">Warm-up</div><div class="val">${supportTxt}</div></div>`)}
           <div class="cell"><div class="k">Info</div><div class="val">${esc(E.capacity)}<small>${[E.dressCode, E.reservations].filter(has).map(esc).join(" · ")}</small></div></div>
@@ -624,7 +626,7 @@
         </div>
         ${opt(has(supportTxt), `<div class="support">con ${supportTxt}</div>`)}
         <div class="datebox">
-          <div>${esc(E.dayName)}<small>${hours} hrs</small></div>
+          <div>${esc(E.dayName)}<small>${hours}${hrs}</small></div>
           <div class="d gold-text">${esc(E.day)}</div>
           <div>${esc(E.month)}<small>${esc(E.year)}</small></div>
         </div>

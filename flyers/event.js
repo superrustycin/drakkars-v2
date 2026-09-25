@@ -34,12 +34,12 @@ window.EVENT = {
   support: ["Invitado Especial", "Residente Drakkars"],
 
   // Fecha y horario
-  dayName: "Sábado",
-  day: "24",
+  dayName: "Miércoles",
+  day: "14",
   month: "Octubre",
   year: "2026",
-  doors: "21:00",
-  endTime: "03:00",
+  doors: "9:00 PM",
+  endTime: "",
 
   // Lugar
   venue: "Mesón Terraza León",
