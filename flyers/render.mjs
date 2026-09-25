@@ -1,4 +1,4 @@
-// Exporta los 5 diseños en formato post (1080×1350) y story (1080×1920)
+// Exporta los 10 diseños en formato post (1080×1350) y story (1080×1920)
 // a flyers/mockups/ en alta resolución (2× → 2160 px de ancho).
 // Uso:  node flyers/render.mjs            (todos)
 //       node flyers/render.mjs 2 story    (solo diseño 2, formato story)
@@ -17,9 +17,9 @@ const out = path.join(dir, "mockups");
 fs.mkdirSync(out, { recursive: true });
 
 const [onlyV, onlyF] = process.argv.slice(2);
-const variants = onlyV ? [Number(onlyV)] : [1, 2, 3, 4, 5];
+const variants = onlyV ? [Number(onlyV)] : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const formats = onlyF ? [onlyF] : ["post", "story"];
-const names = { 1: "oro-y-vino", 2: "aurora", 3: "duo", 4: "editorial", 5: "art-deco" };
+const names = { 1: "oro-y-vino", 2: "aurora", 3: "duo", 4: "editorial", 5: "art-deco", 6: "solo-eclipse", 7: "solo-retrato", 8: "solo-cartel", 9: "solo-neon", 10: "solo-vinilo" };
 
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 2 });

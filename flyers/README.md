@@ -1,6 +1,6 @@
 # Plantillas de flyer — Drakkars × Mesón Terraza León
 
-Cinco diseños que comparten los mismos datos del evento. Cambias los artistas una vez y todos los diseños se actualizan.
+Diez diseños que comparten los mismos datos del evento. Cambias los artistas una vez y todos los diseños se actualizan.
 
 | # | Diseño | Estilo |
 |---|--------|------|
@@ -9,6 +9,16 @@ Cinco diseños que comparten los mismos datos del evento. Cambias los artistas u
 | 3 | **Dúo** | Split vertical con foto de cada headliner (vino / violeta) y separador dorado. |
 | 4 | **Editorial** | Tipográfico, con el número del día en grande y un talón de boleto dorado con QR. |
 | 5 | **Art Déco** | Vino profundo, sunburst detrás del logo, marco dorado con esquinas déco y fuente serif. |
+
+**Diseños solista (6–10)**: destacan solo al primer headliner de `event.js` (hoy, Gox Valdivia).
+
+| # | Diseño | Estilo |
+|---|--------|------|
+| 6 | **Eclipse** | Anillo dorado tipo eclipse con el logo del concepto (o la foto del artista) y el nombre encima. |
+| 7 | **Retrato** | Columna de información + retrato enmarcado en oro; sin foto muestra las iniciales. |
+| 8 | **Cartel** | Campo vino con el nombre en tipografía negra monumental y franja negra de datos. |
+| 9 | **Neón** | Aurora del sitio con el nombre en "tubo de neón" y panel glass. |
+| 10 | **Vinilo** | Portada de disco + vinilo con el logo en la etiqueta; datos como "Lado A". |
 
 Mockups listos en `mockups/` (PNG de 2160 px de ancho, post 4:5 y story 9:16).
 
