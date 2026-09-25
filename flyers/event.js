@@ -34,9 +34,9 @@ window.EVENT = {
   support: ["Invitado Especial", "Residente Drakkars"],
 
   // Fecha y horario
-  dayName: "Miércoles",
+  dayName: "Sábado",
   day: "14",
-  month: "Octubre",
+  month: "Noviembre",
   year: "2026",
   doors: "9:00 PM",
   endTime: "",
