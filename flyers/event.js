@@ -12,16 +12,20 @@ window.EVENT = {
   // Línea superior ("presenta")
   presenter: "Drakkars Producciones presenta",
 
-  // Nombre / concepto de la noche (opcional)
-  title: "Noche en la Terraza",
-  subtitle: "Melodic · Deep · Progressive",
+  // Nombre / concepto de la noche. `kicker` va arriba del título en
+  // pequeño ("Tributo a"); `eventLogo` es el logo del concepto o banda
+  // (PNG con fondo transparente; se pinta en dorado automáticamente).
+  kicker: "Tributo a",
+  title: "Héroes del Silencio",
+  subtitle: "Rock en español · En vivo",
+  eventLogo: "assets/heroes-del-silencio.png",
 
   // Artistas principales — los que se destacan en grande.
   // `photo` es opcional: coloca la imagen en flyers/assets/artistas/
   // (PNG recortado sin fondo o JPG vertical, mínimo 1200 px de alto).
   headliners: [
-    { name: "Gox Valdivia", tag: "Live Set", photo: "" },
-    { name: "Alex Boguslavsky", tag: "DJ Set", photo: "" },
+    { name: "Gox Valdivia", tag: "", photo: "" },
+    { name: "Alex Boguslavsky", tag: "", photo: "" },
   ],
   // Separador entre headliners: "/", "B2B", "&", "×"
   headlinerSeparator: "/",
@@ -65,7 +69,7 @@ window.EVENT = {
   instagram: "@drakkarsproducciones",
   venueInstagram: "@mesonterrazaleon",
   website: "drakkars.show",
-  hashtag: "#DrakkarsNights",
+  hashtag: "#TributoHeroesDelSilencio",
 
   // Patrocinadores (texto; se muestran como fila al pie). Vacío = oculto.
   sponsors: [],

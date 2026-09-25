@@ -15,6 +15,8 @@ Mockups listos en `mockups/` (PNG de 2160 px de ancho, post 4:5 y story 9:16).
 ## Cómo hacer un flyer nuevo
 
 1. **Edita `event.js`**: artistas, fecha, horario, precios, link de boletos, redes y letra chica.
+   `kicker` + `title` forman el nombre del evento (p. ej. "Tributo a" + "Héroes del Silencio") y `eventLogo`
+   es el logo del concepto o banda: cualquier PNG con fondo transparente se pinta en dorado automáticamente.
    Si dejas un campo vacío (`""` o `[]`), se oculta. Los nombres largos se ajustan solos al ancho.
 2. **Fotos de artistas** (se usan en el diseño 3): guárdalas en `assets/artistas/` y pon la ruta en
    `photo`, p. ej. `photo: "assets/artistas/gox.jpg"`. Mientras no haya foto, se muestra una silueta.
@@ -25,7 +27,7 @@ Mockups listos en `mockups/` (PNG de 2160 px de ancho, post 4:5 y story 9:16).
 
 ## Qué incluye cada flyer
 
-Línea "presenta", logos de Drakkars y del Mesón Terraza León, nombre de la noche y género, headliners con
+Línea "presenta", logos de Drakkars, del Mesón Terraza León y del concepto (Héroes del Silencio), nombre de la noche y género, headliners con
 tipo de set, artistas invitados, día, fecha y horario, recinto y dirección, precios por tipo de acceso,
 QR a la venta de boletos, "sin cargos ocultos", reservaciones, +18, dress code, aforo controlado, redes,
 hashtag y letra chica de admisión. Los formatos son post de Instagram 1080×1350 y story 1080×1920; los
