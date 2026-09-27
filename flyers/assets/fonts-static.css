@@ -1,0 +1,11 @@
+/* Instancias estáticas (TTF) para exportar PDF editable a Canva; las variables se incrustan como contornos. */
+@font-face { font-family: "Cinzel"; font-weight: 500; font-display: block; src: url("fonts-static/cinzel-500.ttf") format("truetype"); }
+@font-face { font-family: "Cinzel"; font-weight: 600; font-display: block; src: url("fonts-static/cinzel-600.ttf") format("truetype"); }
+@font-face { font-family: "Cinzel"; font-weight: 700; font-display: block; src: url("fonts-static/cinzel-700.ttf") format("truetype"); }
+@font-face { font-family: "Manrope"; font-weight: 500; font-display: block; src: url("fonts-static/manrope-500.ttf") format("truetype"); }
+@font-face { font-family: "Manrope"; font-weight: 600; font-display: block; src: url("fonts-static/manrope-600.ttf") format("truetype"); }
+@font-face { font-family: "Manrope"; font-weight: 700; font-display: block; src: url("fonts-static/manrope-700.ttf") format("truetype"); }
+@font-face { font-family: "Sora"; font-weight: 500; font-display: block; src: url("fonts-static/sora-500.ttf") format("truetype"); }
+@font-face { font-family: "Sora"; font-weight: 600; font-display: block; src: url("fonts-static/sora-600.ttf") format("truetype"); }
+@font-face { font-family: "Sora"; font-weight: 700; font-display: block; src: url("fonts-static/sora-700.ttf") format("truetype"); }
+@font-face { font-family: "Sora"; font-weight: 800; font-display: block; src: url("fonts-static/sora-800.ttf") format("truetype"); }
