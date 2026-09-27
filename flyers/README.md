@@ -46,3 +46,10 @@ márgenes del story dejan libres las zonas que tapa la interfaz de Instagram.
 Colores y fuentes del sitio: obsidian `#08070B`, oro `#D4AF37` / `#F4CE6E` / `#8A7226`, neón violeta
 `#8B5CF6`, magenta `#E1379F` y cian `#3EE8E0`, más el vino `#7A1426` del logo del Mesón. Las fuentes son
 Livingstone (`public/fonts`), Sora y Manrope; Cinzel se usa en los diseños 1 y 5. Todas se cargan de forma local.
+
+## Versión editable en Canva (diseño 6 · Eclipse)
+
+`node flyers/canva-export.mjs 6` genera en `flyers/canva/` un PDF por formato (post y story) con:
+el brillo del eclipse y el logo HdS como imagen de fondo, y encima textos vivos (Livingstone, Cinzel,
+Sora, Manrope), logos y QR como elementos sueltos. Ese PDF se importa en Canva
+(Crear diseño → Importar archivo) y cada texto queda editable. Para otro diseño cambia el número.
