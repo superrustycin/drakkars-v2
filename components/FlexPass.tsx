@@ -1,51 +1,25 @@
-"use client";
-
-import { motion } from "framer-motion";
+import Reveal from "@/components/Reveal";
 
 const STEPS = [
-  {
-    number: "01",
-    title: "Únete al Flex Pass",
-    description:
-      "Elige tu plan y activa tu membresía en menos de 2 minutos. Sin letras chiquitas.",
-  },
-  {
-    number: "02",
-    title: "Accede antes que nadie",
-    description:
-      "Recibe notificaciones de preventa exclusiva y compra sin filas virtuales ni bots.",
-  },
-  {
-    number: "03",
-    title: "Vive la experiencia premium",
-    description:
-      "Disfruta zonas exclusivas, fast-track de acceso y beneficios en cada evento Drakkar.",
-  },
+  { n: "01", title: "Únete al Flex Pass", text: "Elige tu plan y activa tu membresía en menos de 2 minutos. Sin letras chiquitas." },
+  { n: "02", title: "Accede antes que nadie", text: "Preventas exclusivas y compra sin filas virtuales ni bots." },
+  { n: "03", title: "Vive la experiencia", text: "Zonas exclusivas, acceso preferente y beneficios en cada evento Drakkars." },
 ];
 
 const PLANS = [
   {
     name: "Fan",
     price: "$149",
-    period: "/mes",
-    highlight: false,
-    features: [
-      "Cero cargos por servicio",
-      "Acceso anticipado a preventas",
-      "Comunidad digital Drakkar",
-      "Notificaciones prioritarias",
-    ],
+    features: ["Cero cargos por servicio", "Acceso anticipado a preventas", "Comunidad digital Drakkars", "Notificaciones prioritarias"],
   },
   {
     name: "Flex Pass",
     price: "$349",
-    period: "/mes",
     highlight: true,
-    badge: "Más popular",
     features: [
       "Todo lo del plan Fan",
       "Boletos asegurados en cada evento",
-      "Fast-track de acceso sin filas",
+      "Acceso preferente sin filas",
       "Zonas VIP en recintos aliados",
       "1 meet & greet al año incluido",
     ],
@@ -53,132 +27,80 @@ const PLANS = [
   {
     name: "Icon",
     price: "$699",
-    period: "/mes",
-    highlight: false,
-    features: [
-      "Todo lo del Flex Pass",
-      "Meet & greets ilimitados*",
-      "Concierge de eventos personal",
-      "Invitaciones a eventos privados",
-    ],
+    features: ["Todo lo del Flex Pass", "Meet & greets ilimitados*", "Concierge de eventos personal", "Invitaciones a eventos privados"],
   },
 ];
 
 export default function FlexPass() {
   return (
-    <section id="flex-pass" className="relative py-28">
-      <div className="pointer-events-none absolute right-0 top-1/3 -z-10 h-[30rem] w-[30rem] rounded-full bg-neon-magenta/10 blur-[120px]" />
-
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="mx-auto max-w-2xl text-center"
-        >
-          <span className="section-eyebrow">El Modelo Flex Pass</span>
-          <h2 className="mt-6 font-display text-4xl leading-snug sm:text-5xl">
-            Una membresía, <span className="text-gradient-gold">acceso ilimitado</span>{" "}
-            a la magia
-          </h2>
-          <p className="mt-4 text-lg text-white/60">
-            Deja de competir contra bots y reventa. Con Flex Pass, tu lugar
-            está garantizado desde antes de que el evento se anuncie al
-            público general.
-          </p>
-        </motion.div>
-
-        {/* Cómo funciona: 3 pasos */}
-        <div className="mt-16 grid gap-8 md:grid-cols-3">
-          {STEPS.map((step, i) => (
-            <motion.div
-              key={step.number}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="relative"
-            >
-              <div className="font-subheading text-6xl font-extrabold text-white/5">
-                {step.number}
-              </div>
-              <h3 className="-mt-6 font-subheading text-xl font-bold">
-                {step.title}
-              </h3>
-              <p className="mt-2 text-sm text-white/60">{step.description}</p>
-              {i < STEPS.length - 1 && (
-                <div className="absolute right-[-1rem] top-6 hidden h-px w-8 bg-gradient-to-r from-gold/50 to-transparent md:block" />
-              )}
-            </motion.div>
-          ))}
+    <section id="flex-pass" className="grain scroll-mt-20 overflow-hidden bg-wine-deep py-20 md:scroll-mt-24 md:py-28">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={{ background: "radial-gradient(60% 60% at 85% 10%, rgba(212,175,55,.18), transparent 70%), radial-gradient(70% 60% at 0% 100%, rgba(122,20,38,.7), transparent 70%)" }}
+      />
+      <div className="container-x">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-end">
+          <Reveal>
+            <p className="eyebrow text-gold">Membresía</p>
+            <h2 className="mt-3 font-display text-6xl leading-none md:text-8xl">Flex Pass</h2>
+            <p className="mt-6 max-w-lg text-lg text-paper/70">
+              Deja de competir contra bots y reventa. Con Flex Pass, tu lugar está garantizado desde antes de que el evento se
+              anuncie al público general.
+            </p>
+          </Reveal>
+          <ol className="grid gap-6 sm:grid-cols-3 lg:gap-8">
+            {STEPS.map((s, i) => (
+              <Reveal as="li" key={s.n} delay={i * 0.06} className="border-t border-paper/20 pt-4">
+                <span className="font-subheading text-sm font-bold text-gold">{s.n}</span>
+                <h3 className="mt-2 font-subheading font-bold">{s.title}</h3>
+                <p className="mt-1 text-sm text-paper/60">{s.text}</p>
+              </Reveal>
+            ))}
+          </ol>
         </div>
 
-        {/* Tarjetas de precios */}
-        <div className="mt-20 grid gap-6 lg:grid-cols-3">
-          {PLANS.map((plan, i) => (
-            <motion.div
-              key={plan.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className={`relative flex flex-col rounded-2xl border p-8 ${
-                plan.highlight
-                  ? "border-gold/40 bg-gradient-to-b from-gold/10 to-transparent shadow-gold lg:scale-105"
-                  : "border-white/10 bg-white/[0.03]"
-              }`}
+        <ul className="mt-16 grid gap-px bg-paper/15 lg:grid-cols-3">
+          {PLANS.map((p, i) => (
+            <Reveal
+              as="li"
+              key={p.name}
+              delay={i * 0.06}
+              className={`relative flex flex-col p-8 lg:p-10 ${p.highlight ? "bg-paper text-ink" : "bg-wine-deep"}`}
             >
-              {plan.badge && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gold-gradient px-4 py-1 text-xs font-bold text-obsidian">
-                  {plan.badge}
-                </span>
-              )}
-
-              <h3 className="font-subheading text-lg font-bold text-white/80">
-                {plan.name}
-              </h3>
-              <div className="mt-4 flex items-baseline gap-1">
-                <span className="font-subheading text-4xl font-extrabold">
-                  {plan.price}
-                </span>
-                <span className="text-white/50">{plan.period}</span>
-              </div>
-
-              <ul className="mt-8 flex-1 space-y-3">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3 text-sm text-white/70">
-                    <span className="mt-0.5 text-gold-bright">✓</span>
-                    {feature}
+              {p.highlight && <span className="eyebrow absolute right-6 top-6 bg-gold px-2 py-1 text-ink">Más popular</span>}
+              <h3 className="font-subheading text-sm font-bold uppercase tracking-[0.2em]">{p.name}</h3>
+              <p className="mt-6 flex items-baseline gap-1">
+                <span className="font-subheading text-5xl font-extrabold tracking-tight">{p.price}</span>
+                <span className={p.highlight ? "text-ink/50" : "text-paper/50"}>/mes</span>
+              </p>
+              <ul className={`mt-8 flex-1 space-y-3 text-sm ${p.highlight ? "text-ink/75" : "text-paper/70"}`}>
+                {p.features.map((f) => (
+                  <li key={f} className="flex gap-3">
+                    <span aria-hidden className={p.highlight ? "text-wine" : "text-gold"}>
+                      ✓
+                    </span>
+                    {f}
                   </li>
                 ))}
               </ul>
-
               {/*
-                PAGOS: conectar aquí con la pasarela de pagos (ej. Stripe, Conekta, Mercado Pago).
-                Este botón debe iniciar el flujo de checkout/suscripción recurrente para el plan seleccionado.
+                PAGOS: conectar con la pasarela (Stripe, Conekta, Mercado Pago).
+                Debe iniciar el checkout/suscripción recurrente del plan.
               */}
               <button
                 type="button"
-                data-plan={plan.name}
-                onClick={() => {
-                  // TODO: integrar con API de backend -> POST /api/subscriptions { plan: plan.name }
-                }}
-                className={`mt-8 rounded-full px-6 py-3 text-sm font-bold transition-transform hover:scale-[1.02] active:scale-95 ${
-                  plan.highlight
-                    ? "bg-gold-gradient text-obsidian shadow-gold"
-                    : "border border-white/20 bg-white/5 text-white hover:border-gold/50"
-                }`}
+                data-plan={p.name}
+                className={`mt-10 ${p.highlight ? "btn bg-ink text-paper hover:bg-wine" : "btn-ghost-light"}`}
               >
-                Solicitar Acceso Anticipado
+                Solicitar acceso anticipado
               </button>
-            </motion.div>
+            </Reveal>
           ))}
-        </div>
-
-        <p className="mt-8 text-center text-xs text-white/30">
-          *Sujeto a disponibilidad del artista y del recinto. Precios en MXN,
-          IVA incluido. Cancela cuando quieras, sin penalizaciones.
+        </ul>
+        <p className="mt-6 text-xs text-paper/45">
+          *Sujeto a disponibilidad del artista y del recinto. Precios en MXN, IVA incluido. Cancela cuando quieras, sin
+          penalizaciones.
         </p>
       </div>
     </section>

@@ -5,19 +5,42 @@ const config: Config = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./lib/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  // En pantallas táctiles el :hover se queda "pegado" tras un tap;
+  // así los estilos hover solo aplican donde hay puntero real.
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   theme: {
     extend: {
       colors: {
-        obsidian: {
-          DEFAULT: "#08070B",
-          soft: "#100D16",
-          card: "#15121C",
+        // Base editorial: tinta casi negra + papel cálido.
+        ink: {
+          DEFAULT: "#0B0A0D",
+          soft: "#141217",
+          line: "#26232B",
         },
+        paper: {
+          DEFAULT: "#F3EFE7",
+          soft: "#E9E3D8",
+          line: "#D6CEBF",
+        },
+        // Marca: dorado del logo/flyers y vino del Mesón Terraza León.
         gold: {
           DEFAULT: "#D4AF37",
           bright: "#F4CE6E",
           muted: "#8A7226",
+        },
+        wine: {
+          DEFAULT: "#7A1426",
+          deep: "#3A0710",
+        },
+        // Se conservan para compatibilidad con piezas existentes.
+        obsidian: {
+          DEFAULT: "#08070B",
+          soft: "#100D16",
+          card: "#15121C",
         },
         neon: {
           violet: "#8B5CF6",
@@ -32,22 +55,15 @@ const config: Config = {
       },
       backgroundImage: {
         "gold-gradient": "linear-gradient(135deg, #F4CE6E 0%, #D4AF37 45%, #8A7226 100%)",
-        "aurora": "radial-gradient(60% 60% at 20% 20%, rgba(139,92,246,0.35) 0%, rgba(139,92,246,0) 60%), radial-gradient(50% 50% at 80% 30%, rgba(225,55,159,0.25) 0%, rgba(225,55,159,0) 60%), radial-gradient(60% 60% at 50% 90%, rgba(62,232,224,0.18) 0%, rgba(62,232,224,0) 60%)",
       },
-      boxShadow: {
-        gold: "0 0 40px -10px rgba(212,175,55,0.55)",
-        neon: "0 0 40px -10px rgba(139,92,246,0.55)",
+      transitionTimingFunction: {
+        out: "cubic-bezier(0.23, 1, 0.32, 1)",
+        "in-out": "cubic-bezier(0.77, 0, 0.175, 1)",
       },
       animation: {
-        "pulse-slow": "pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        float: "float 6s ease-in-out infinite",
-        marquee: "marquee 28s linear infinite",
+        marquee: "marquee 40s linear infinite",
       },
       keyframes: {
-        float: {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-14px)" },
-        },
         marquee: {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },

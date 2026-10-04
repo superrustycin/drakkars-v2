@@ -1,19 +1,31 @@
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Manifesto from "@/components/Manifesto";
+import FeaturedHero from "@/components/FeaturedHero";
+import PromiseTicker from "@/components/PromiseTicker";
+import EventsSection from "@/components/EventsSection";
+import VenuesSection from "@/components/VenuesSection";
+import AboutSection from "@/components/AboutSection";
 import FlexPass from "@/components/FlexPass";
-import EventsLineup from "@/components/EventsLineup";
+import PartnerSection from "@/components/PartnerSection";
+import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
+import { featuredEvents, upcomingEvents, VENUES } from "@/lib/events";
 
 export default function Home() {
+  const events = upcomingEvents();
   return (
-    <main className="relative overflow-x-hidden">
+    <>
       <Navbar />
-      <Hero />
-      <Manifesto />
-      <FlexPass />
-      <EventsLineup />
+      <main>
+        <FeaturedHero events={featuredEvents()} />
+        <PromiseTicker />
+        <EventsSection events={events} />
+        <VenuesSection venues={VENUES} events={events} />
+        <AboutSection />
+        <FlexPass />
+        <PartnerSection />
+        <Newsletter />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }
